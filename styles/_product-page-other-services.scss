@@ -1,0 +1,67 @@
+.giftbox {
+    display: flex;
+    align-items: center;
+
+    &__gift-img {
+        display: flex;
+        &--link{
+            width: 100px;
+            display: block;
+            margin-right: 16px;
+
+            img { 
+                display: block;
+                width: 100%;
+                object-fit: scale-down;
+            }
+        }
+        
+        label {
+            align-self: center;
+            margin: 0;
+        }
+    }
+}
+
+.vip-service {
+
+    &__service{
+
+        display: flex;
+        align-items: center;
+
+        label {
+            margin: 0;
+        }
+
+        label:not(:last-child) {
+            width: 100px;
+            margin-right: 16px;
+
+            img {
+                object-fit: scale-down;
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+    &__service-desc {
+        font-style: italic;
+        font-weight: bold;
+        color: $font-color-gray;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+}
+
+.chk-margin-right {
+    margin-right: 14px;
+}
+
+.other-label {
+    text-transform: uppercase;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+}

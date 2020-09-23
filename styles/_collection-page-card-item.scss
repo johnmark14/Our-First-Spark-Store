@@ -1,0 +1,39 @@
+.design-btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    height: 52px; 
+    background-color: $btn-secondary-accent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .03s ease-in, background-color 0.1s ease-in;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+
+    span {
+        text-transform: uppercase;
+    }
+
+    span:selection {
+        color: none;
+        background: none;
+    }
+}
+
+.card-hover:hover .design-btn{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.design-btn:hover {
+    background-color: $btn-secondary-accent-dark;
+}

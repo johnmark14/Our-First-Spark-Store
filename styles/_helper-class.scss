@@ -1,0 +1,78 @@
+
+// Margins
+.s-m-top {margin-top: 10px;}
+.m-m-top {margin-top: 20px;}
+
+.s-m-right {margin-right: 10px;}
+.m-m-right {margin-right: 20px;}
+
+.s-m-left {margin-left: 10px;}
+.m-m-left {margin-left: 20px;}
+
+.s-m-bot {margin-bottom: 10px;}
+.m-m-bot {margin-bottom: 20px;}
+
+// Padding
+.s-p-top {padding-top: 10px;}
+.s-p-right {padding-right: 10px;}
+.s-p-left {padding-left: 10px;}
+.s-p-bot {padding-bottom: 10px;}
+.s-p-all {padding: 10px;}
+
+// Reset Padding
+.r-p-top {padding-top: 0;}
+.r-p-right {padding-right: 0;}
+.r-p-left {padding-left: 0;}
+.r-p-bot {padding-bottom: 0;}
+.r-p-all {padding: 0;}
+
+
+// Display Flex
+.display-flex {display: flex;}
+
+.justify-content-space-between {justify-content: space-between;}
+
+.justify-content-c {justify-content: center};
+
+.align-items-c  {align-items: center;}
+
+// Display Grid
+.display-grid {display: grid;}
+
+.grid-gap-s {grid-gap: 10px;}
+.grid-gap-m {grid-gap: 20px;}
+.grid-gap-l {grid-gap: 30px;}
+.grid-gap-xl {grid-gap: 40px;}
+
+.grid-col-1 {grid-template-columns: 1fr;}
+
+.grid-col-2 {grid-template-columns: repeat(2, 1fr);}
+
+.grid-auto-100 {grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));}
+
+// Show the modal
+.show-modal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1) !important;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s !important;
+}
+
+/* Helper class for Text Engraving */
+.for-stainless-steel-photo {
+    top: 58%;
+    left: 50%;
+    // border: 1px solid red;
+}
+.for-circle-custom-text {
+    top: 60%;
+    left: 50%;
+
+    // border: 1px solid red;
+}
+.for-heart-custom-text {
+    top: 54%;
+    left: 50%;
+
+    // border: 1px solid red;
+}

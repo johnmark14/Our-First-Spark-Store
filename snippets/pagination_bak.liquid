@@ -1,0 +1,53 @@
+{% comment %}
+    Renders a pagination bar
+
+    Accepts:
+    - paginate: {Object} Paginate Liquid object (required)
+
+    Usage:
+    {% include 'pagination', paginate: paginate %}
+{% endcomment %}
+<ul class="list--inline pagination">
+  {% unless paginate.previous.is_link %}
+    <li aria-hidden="true" class="disabled">
+      <a href="#" disabled>
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="btn-page">
+      <a href="{{ paginate.previous.url }}">
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+      </a>
+    </li>
+  {% endunless %}
+  {% assign count = paginate.pages %}
+  
+  {% for part in (1..count) limit: 5 %}
+      <li {% if paginate.current_page == part %}class="disabled"{%else%}class="btn-page"{% endif %}>
+        <a href="{% if paginate.current_page == part %}#{%else%}{{ collection.url }}?page={{ forloop.index }}{%endif%}">{{ forloop.index }}</a></li>
+  {% endfor %}
+  <!-- <li class="btn-page">
+    {{count}}
+  </li> -->
+  <!-- <li class="pagination__text">
+    {{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}
+  </li> -->
+  {% unless paginate.next.is_link %}
+    <li aria-hidden="true" class="disabled">
+      <a href="#" disabled>
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+      </a>
+    </li>
+  {% else %}
+    <li class="btn-page">
+      <a href="{{ paginate.next.url }}" >
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+      </a>
+    </li>
+  {% endunless %}
+</ul>

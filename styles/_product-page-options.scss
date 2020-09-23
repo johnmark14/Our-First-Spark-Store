@@ -1,0 +1,32 @@
+.form-group {
+    margin-top: 20px;
+
+    .single-option-selector {
+        
+        input {
+            display: none;
+        }
+
+        label {
+            border: 1px solid rgb(121, 121, 121);
+            color: black;
+            padding: 8px 12px;
+            line-height: normal;
+            display: inline-block;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        label:hover {
+            border: 1px solid black;
+        }
+
+        input:checked + label {
+            background: black;
+            border: 1px solid black;
+            color: white;
+        }
+    }
+}

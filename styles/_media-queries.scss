@@ -1,0 +1,238 @@
+@media only screen and (max-width: 1220px) {
+    /* helper class */
+    .grid-gap-xl {grid-gap: 20px;}
+
+    /* Coupon Codes*/
+    .coupon-code__container {width: 100%;}
+}
+@media only screen and (max-width: 1024px) {
+    /* Photo Image Preview*/
+    .modal-container__inner-container {width: 80vw;}
+    
+    /* Engraving Preview*/
+    .modal-container__engrave-inner {width: 80vw;}
+}
+@media only screen and (max-width: 768px) {
+    /* helper class */
+    .grid-gap-xl {grid-gap: 10px;}
+
+     /* Coupon Codes*/
+     .coupon-code__container {
+        grid-template-columns: repeat(auto-fit, minmax(20%, 30%));
+     }
+
+    /* Photo Image Preview*/
+    .modal-container__inner-container {width: 100%;}
+
+    /* Engraving Preview*/
+    .modal-container__engrave-inner {width: 100%;}
+
+    /* Similar products */
+    .similar-products {
+        padding: 0;
+
+        &__container--img {
+            width: 100%;
+            
+            img {
+                object-fit: scale-down;
+            }
+        }
+    }
+
+    /* Similar products modal */
+    .similar-products--modal__container {
+        width: 95%;
+    }
+
+    .similar-products__card {
+        grid-gap: 0;
+
+        &--item {
+        width: 130px;
+        }
+    }
+    
+}
+@media only screen and (max-width: 680px) {
+    /* helper class */
+    .grid-gap-xl {grid-gap: 5px;}
+
+    /* Collection Page*/
+    .collection-hero__image {
+        height: 210px;
+    }
+
+    /* Coupon Codes*/
+    .coupon-code__container {
+        grid-template-columns: repeat(auto-fit, minmax(20%, 32%));
+
+        .coupon-code {
+            padding: 10px 0;
+
+            &__top {
+               font-size: 34px;
+               letter-spacing: -1px;
+               
+               span:nth-child(1) {
+                    transform: translateY(-5px);
+                    font-size: 22px;
+                }
+               span:nth-child(3) {
+                    padding-left: 12px;
+                }
+            }
+
+            &__bot {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .font-size-l {font-size: 28px !important;}
+
+    /* Photo Image Previews*/
+    .modal-container__inner-container .canvas {width: 100%;}
+    
+    .modal-container__inner-container .scroll-overflow {padding: 10px 0;}
+
+    .modal-container__inner-container .submit-buttons .btn {width: 55%;}
+
+    /* Engraving Preview*/
+    .modal-container__engrave-inner {overflow-y: scroll;}
+    .engraving-preview {justify-self: center !important;}
+    .scroll-engrave-overflow {overflow: auto;}
+    .engraving-grid-container {
+        padding-top: 10px;
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+
+    /* Image Preview */
+    #picture1, #picture2 {width: 200px;}
+
+    /* add to cart & Buy it now button */
+    .btn-fixed {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .shopify-payment-button {
+        width: 100%;
+    }
+
+    .product-form__cart-submit, 
+    .shopify-payment-button 
+    .shopify-payment-button__button--unbranded {
+        border-radius: 0;
+        margin: 0;
+        min-height: 51px;
+    }
+
+    /* Floating scrool top button */
+    .top-scrollerx {
+        bottom: 57px !important;
+        right: 12px !important;
+    }
+
+    /* Similar products modal */
+    .similar-products--modal__container {
+        width: 98%;
+        padding: 20px 10px;
+    }
+
+    .similar-products__card {
+        grid-gap: 0;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+        &--item {
+        width: 130px;
+        }
+    }
+
+    /* Footer Thumbnail */
+    .footer-collections ul {
+        flex-direction: column;
+    }
+
+    .footer-collections ul li {
+        width: 100% !important;
+        padding: .5rem 0 !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    
+    /* Helper class  */ 
+    .grid-gap-s { grid-gap: 5px;}
+
+    /* Photo Image Previews*/
+    .modal-container__modal-close{right: 20px;}
+    .modal-container__inner-container .canvas .photo-buttons {padding: 10px 0;}
+    .modal-container__inner-container .submit-buttons .btn {width: 65%;}
+    
+    .upload-photo.after{padding: 25px 10px;}
+    .upload-photo.after .big i {padding-left: 0;}
+
+    /* Collection Page*/
+
+    /* Coupon Codes*/
+    .coupon-code__container {
+        grid-template-columns: repeat(auto-fit, minmax(10%, 30%));
+        margin: 20px auto;
+
+        .coupon-code {
+            padding: 5px 0;
+
+            &__top {
+               font-size: 24px;
+               letter-spacing: 0;
+               
+               span:nth-child(1) {
+                    transform: translateY(-3px);
+                    font-size: 14px;
+                }
+               span:nth-child(3) {
+                    padding-left: 10px;
+                }
+            }
+
+            &__bot {
+                font-size: 12px;
+                flex-direction: column;
+            }
+        }
+    }
+
+    /* Collection Page Pupup BTN */
+    .design-btn {letter-spacing: 0;}
+
+}
+
+@media only screen and (max-width: 320px) {
+    /* helper class */
+    .grid-gap-xl {grid-gap: 5px;}
+    
+    .font-size-l {font-size: 25px !important;}
+    .display-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Photo Image Previews*/
+    .modal-container__inner-container{border-radius: 2px;}
+    .modal-container__inner-container .ps {padding: 5px 5px;}
+    .modal-container__inner-container .submit-buttons .btn {
+        width: 75%;
+        margin-top: 10px;
+    }
+}

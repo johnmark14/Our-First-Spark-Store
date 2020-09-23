@@ -1,0 +1,21 @@
+{%- liquid 
+    for variant in all_products['vip'].variants
+        assign var_id = variant.id
+    endfor
+-%}
+<div class="vip-service">
+    <div class="vip-service__service">
+        <div class="chk-checkbox chk-margin-right">
+            <input type="checkbox" name="properties[_VIP Service]" id="chk-vip-service" value="x1" data-prod-id="{{var_id}}">
+        </div>
+        <label for="chk-vip-service">
+            <img class="lazyloaded" src="{{all_products['vip'].featured_image.src | img_url: "medium"}}" alt="VIP Services">
+        </label>
+        <label for="chk-vip-service"> 
+            <h6 class="other-label">{{all_products['vip'].title}} + <span>{{all_products['vip'].price | money}}</span>
+        </label>
+    </div>
+    <div class="vip-service__service-desc">
+        {{all_products['vip'].description}}
+    </div>
+</div>

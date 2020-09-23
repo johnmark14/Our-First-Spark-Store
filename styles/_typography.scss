@@ -1,0 +1,112 @@
+/* /////////////////////////////////////////////////-FONT CLASSES-////////////////////////////////////////////////////////////////////////// */
+
+/* READ ME!
+// Please add class for the new added fonts here!!!
+// Please follow the class syntax .font-family-[font-name]
+// Please use dash to separate font-names by word
+*/
+.font-family-Apple-Chancery-Regular {
+    font-family: 'AppleChanceryRegular';
+    line-height: 20px;
+    font-size: 30px;
+}
+
+.font-family-AlexBrush-Regular {
+    font-family: 'AlexBrush';
+    line-height: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.font-family-commercial-script-bt {
+    font-family: 'CommercialScriptBt';
+    line-height: 20px;
+    font-size: 30px;
+    // font-weight: bold;
+}
+
+.font-family-pacifico {
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+    line-height: 20px;
+}
+.font-family-cookie {
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+    line-height: 20px;
+    // font-weight: bold;
+    // font-style: italic;
+}
+.font-family-parisienne {
+    font-family: 'Parisienne', cursive;
+    font-size: 24px; 
+    line-height: 24px;
+    // font-weight: bold;
+}
+
+.font-family-great-vibes {
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    line-height: 25px;
+    // font-weight: bold;
+}
+.font-family-lobster {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    line-height: 20px;
+    // font-weight: bold;
+}
+.font-family-old-english-font-mt {
+    font-family: 'OldEnglishFontMT', cursive;
+    font-size: 25px;
+    line-height: 20px;
+    // font-weight: bold;
+}
+.font-family-satisfy {
+    font-family: 'Satisfy', cursive;
+    font-size: 25px;
+    line-height: 20px;
+    // font-weight: bold;
+}
+.font-family-nexa-script-free{
+    font-family: 'NexaScript-Free';
+    font-size: 25px;
+    line-height: 20px;
+    // font-weight: bold;
+}
+.font-family-source-codepro-black{
+    font-family: 'SourceCodeproBlack';
+    font-size: 25px;
+    line-height: 20px;
+    // font-weight: bold;
+}
+.font-family-normal {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+}
+/* /////////////////////////////////////////////////-FONT SIZES-////////////////////////////////////////////////////////////////////////// */
+.font-size-xs {font-size: 18px !important;}
+.font-size-s {font-size: 25px !important;}
+.font-size-m {font-size: 28px !important;}
+.font-size-l {font-size: 35px !important;}
+.font-size-xl {font-size: 45px !important;}
+
+.font-color-gold {
+    color: $font-color-gold;
+    background: $font-color-gold-gr;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.font-color-rose-gold {
+    color: $font-color-rose-gold;
+    background: $font-color-rose-gold-gr;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.font-color-silver {
+    color: $font-color-silver;
+    background: $font-color-silver-gr;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

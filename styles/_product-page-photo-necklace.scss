@@ -1,0 +1,259 @@
+.upload-photo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        height: 50px;
+        background: #fff;
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+
+        #photo-file {
+            opacity: 0;
+            cursor: pointer;
+            padding: 7% 1%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            color: #000;
+            width: 100%;
+        }
+
+        .add-img {
+            color: #000;
+            cursor: pointer;
+            display: flex;
+            text-transform: capitalize;
+            font-size: 15px;
+            font-weight: normal;
+            align-items: center;
+            height: 100%;
+            justify-content: space-between;
+            width: 100%; 
+            padding: 0 20px;
+
+            i {
+                font-size: 24px;
+                color: $font-color-dark-gray;
+            }
+        }
+    }
+
+    &.after {
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        position: relative;
+        border: none;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 30px 0;
+        
+
+        .big {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            img {
+                object-fit: scale-down;
+            }
+
+            i {
+                padding-left: 10px;
+            }
+        }
+
+        .after-preview {
+            position: relative;
+            cursor: pointer;
+            span {
+                background: #000;
+                padding: 7px 18px;
+                border-radius: 14px;
+                margin-right: 10px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            input {
+                opacity: 0;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #000;
+                width: 100%;
+                height: 100%;
+            }
+
+            input[type=file],
+            input[type=file]::-webkit-file-upload-button {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.90);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index: 10001;
+
+    &__inner-container {
+        text-align: center;
+        background-color: #f7f8f9;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60vw;
+        border-radius: 8px;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        position: relative;
+        
+
+        .scroll-overflow {
+            padding: 20px 40px;
+            max-height: 550px;
+            overflow-y: scroll;
+        }
+
+        .canvas {
+            width: 500px;
+            margin: 0 auto;
+
+            .canvas-fabric-container {
+                position: relative;
+                width: 320px;
+                overflow: hidden;
+                margin: 0 auto;
+            }
+
+            .photo-buttons {
+                text-align: center;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 10px;
+                margin: 0;
+                border-top: 1px solid #eff0f1;
+                cursor: default;
+        
+                .btn-adjuster {
+                    border: none;
+                    background-color: transparent;
+                    font-size: 20px;
+                    padding: 10px;
+                    color: #c8c8c8;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                .btn-adjuster:not(:last-child) {
+                    margin-right: 10px;
+                }
+                
+                .btn-adjuster:hover,
+                .btn-adjuster:active {
+                    color: #a8a8a8;
+                }
+            }
+        }
+
+        .ps {
+            text-align: left;
+            padding: 5px 20px;
+
+            p {
+                color: $font-color-gray;
+            }
+        }
+
+        .submit-buttons {
+            margin-top: 20px;
+            .btn {
+                display: block;
+                margin: 0 auto;
+
+                width: 45%;
+                height: 55px;
+                margin-top: 15px;
+                font-size: 14px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+
+                &-confirm {
+                    background: #e60044;
+                    color: #fff;
+                    transition: background .2s ease-in;
+                }
+
+                &-confirm:hover,
+                &-confirm:active {
+                    background: #fd0751;
+                }
+
+                &-change-picture {
+                    border: 1px solid #000;
+                    color: #000;
+                    border-radius: 4px;
+                    background: #fff;
+                }
+            }
+        }
+    }
+
+    &__modal-close {
+        position: absolute;
+        top: 25px;
+        right: 45px;
+        font-size: 26px;
+        color: #858585;
+        cursor: pointer;
+        transition: all .1s ease-in;
+        z-index: 10009;
+    }
+
+    &__modal-close:hover,
+    &__modal-close:active {
+        color: #3a3a3a;
+    }
+}
+
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    height: 100%;
+    width: 100%;
+
+    background-color: #f7f8f9;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 10005;
+}

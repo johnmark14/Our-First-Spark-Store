@@ -1,0 +1,56 @@
+<div class="modal-container">
+    <div class="modal-container__inner-container">
+        <span id="close-preview-modal" class="modal-container__modal-close"><i class="fa fa-times"></i></span>
+        <div id="scroll-overflow" class="scroll-overflow">
+            <div class="canvas">
+                <div class="canvas-fabric-container">
+                    <canvas id="photo-canvas" width="320px" height="320px"></canvas>
+                    <!-- <canvas id="frame-canvas" class="upper-canvas" width="320" height="320"></canvas> -->
+                </div>
+                <div class="photo-buttons">
+                    <button type="button" class="btn-adjuster" data-method="move-left">
+                        <i class="fa fa-chevron-left" data-method="move-left"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="move-right">
+                        <i class="fa fa-chevron-right" data-method="move-right"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="move-up">
+                        <i class="fa fa-chevron-up" data-method="move-up"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="move-down">
+                        <i class="fa fa-chevron-down" data-method="move-down"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="zoom-big">
+                        <i class="fa fa-search-plus" data-method="zoom-big"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="zoom-small">
+                        <i class="fa fa-search-minus" data-method="zoom-small"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="rotate-left">
+                        <i class="fa fa-undo" data-method="rotate-left"></i>
+                    </button>
+                    <button type="button" class="btn-adjuster" data-method="rotate-right">
+                        <i class="fa fa-undo" style="transform: scaleX(-1);" data-method="rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="ps">
+                <p>P.S. Please make sure you're putting your picture in correct position, we'll make it exactly the same as shown
+                    in the preview above.
+                </p>
+            </div>
+            <div class="submit-buttons">
+                <button id="confirm-picture" class="btn btn-confirm" type="button">Confirm</button>
+                <button id="confirm-change-picture" class="btn btn-confirm" type="button" style="display: none;">Confirm Picture</button>
+                <button id="change-picture" class="btn btn-change-picture" type="button">Change Picture</button>
+            </div>
+        </div>
+        <div id="loader-container" class="loading-screen">
+            {{ 'spinner.gif' | asset_url | img_tag: 'Loading' }}
+        </div>
+        <div id="preview-picture" class="loading-screen">
+            <img id="picture1" onerror="this.src =''" style="object-fit: scale-down;">
+            <img id="picture2" onerror="this.src =''" style="object-fit: scale-down;"> 
+        </div>
+    </div>
+</div>

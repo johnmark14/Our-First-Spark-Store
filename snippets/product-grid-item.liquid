@@ -1,0 +1,71 @@
+{% comment %}
+    Renders a product card using "Grid" style
+    Accepts:
+    - max_height: {Number} Maximum height of the product's image (required)
+    - product: {Object} Product Liquid object (required)
+    - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+    Usage:
+    {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+<div class="grid-view-item{% unless product.available %} grid-view-item--sold-out{% endunless %} product-card">
+  <a id="card-link" class="grid-view-item__link grid-view-item__image-container full-width-link" href="{{ product.url | within: collection }}">
+    <span class="visually-hidden">{{ product.title }}</span>
+  </a>
+
+
+  {% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
+  {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
+  {%- assign preview_image = product.featured_image.src -%}
+  {%- assign img_url = preview_image | img_url: 'medium' -%}
+
+  {% unless preview_image == blank %}
+    {% include 'image-style', image: preview_image, height: max_height, wrapper_id: wrapper_id, img_id: img_id %}
+  {% endunless %} 
+
+  <div class="product-card__image-with-placeholder-wrapper" data-image-with-placeholder-wrapper>
+    <div>
+    <div>
+
+        <!-- product badge --->  
+    {% assign showTag = false %}
+{% for collection in product.collections %}
+  {% if collection.handle == 'backorder' %}
+    {% assign showTag = true %}
+  {% endif %}
+{% endfor %}
+{% assign days = 60 %}
+{% assign period_time = days | times: 24 | times: 60 | times: 60 %}
+{% assign date_now = 'now' | date:'%s' %}
+{% assign date_finished = product.published_at | date:'%s' | plus: period_time | date:'%s' %}
+{% if product.compare_at_price > product.price %}
+  {% assign sale_text_length = 'products.product.on_sale' | t | size %}
+  <span class="card__badge{% if sale_text_length > 6 %} card__badge--large{% endif %}" style="position: absolute;background-color: #d5b982;padding: 0 10px;color: white;font-size: inherit;text-align: center;display: flex;justify-content: center;align-items: center;">
+  Sale</span>
+{% elsif date_finished > date_now %}
+  <span class="card__badge__new" style="position: absolute;background-color: #52ab78;padding: 0 10px;color: white;font-size: inherit;text-align: center;display: flex;justify-content: center;align-items: center;">New</span>
+{% elsif showTag %}
+  <span class="card__badge__new" style="position: absolute;background-color: #d5b982;padding: 0 10px;color: white;font-size: inherit;text-align: center;display: flex;justify-content: center;align-items: center;">New</span>
+{% endif %}
+  <!-- product badge ---> 
+  <img class="grid-view-item__image lazyload" src="{{ product.featured_media.preview_image | img_url: 'medium' }}" 
+        alt="{{product.featured_media.preview_image.alt}}">
+      </div>
+    </div>
+    <div class="placeholder-background placeholder-background--animation" data-image-placeholder></div>
+  </div>
+
+  <noscript>
+    {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
+    <img class="grid-view-item__image" src="{{product.featured_image.src | img_url: 'medium'}}" alt="{{ preview_image.alt }}" style="max-width: {{ max_height | times: preview_image.aspect_ratio }}px;">
+  </noscript>
+
+  <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">{{ product.title }}</div>
+  {% comment %}Start automatically added Judge.me widget{% endcomment %}
+  {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+  {% comment %}End automatically added Judge.me widget{% endcomment %}
+ 
+  {% include 'product-price', variant: product %}
+
+</div>

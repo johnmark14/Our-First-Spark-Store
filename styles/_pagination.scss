@@ -1,0 +1,31 @@
+
+#pagination a, #pagination i {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 10px;
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+         -o-user-select:none;
+            user-select:none;
+}
+
+#pagination a {
+    margin: 0 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e6e6e6;
+
+    transition: all .3s ease-in;
+}
+
+#pagination a:hover {
+    border: 1px solid #d6d6d6;
+}
+
+#pagination a.current {
+    background-color: #eeeeee;
+    border: 1px solid #d6d6d6;
+}

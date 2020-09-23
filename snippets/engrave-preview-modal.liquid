@@ -1,0 +1,61 @@
+<div class="modal-container__engrave">
+    <div class="modal-container__engrave-inner">
+        <span id="close-engrave-modal" class="modal-container__engrave-close"><i class="fa fa-times"></i></span>
+        <div class="engraving-grid-container"> 
+            <div class="engraving-preview">
+                <canvas id="frame-engrave-canvas" class="lower-engrave-canvas" width="320" height="320"></canvas>
+                <div id="engraving-canvas" class="{{ product.metafields.engrave-text-class.class }}"></div>
+            </div>
+            <div class="scroll-engrave-overflow">
+                <div class="engrave-content-area">
+                    <textarea id="engrave-textarea" cols="43" rows="3" maxlength="30" placeholder="Please Note: No colors or emoji can be used, e.g. a red heart icon will show a heart in color black."></textarea>
+                    <div class="custom-size">
+                        <span class="size-label">Font Size:</span>
+                        <select id="font-size">
+                            <option value="10">10</option>
+                            <option value="20" selected>20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                            <option value="60">60</option>
+                            <option value="70">70</option>
+                            <option value="80">80</option>  
+                        </select>
+                    </div>
+                    <div class="selector-wrapper js product-form__item">
+                        <div class="engrave-preview-fontstyle">
+                            <label class="font-label" for="font-style">Font Styles:</label>
+                            <div class="product-form__container--grid s-m-top">
+                                <input class="product-form__radio" type="radio" name="font-style" id="engraving-font-0" data-font-family="Normal"  checked >
+                                <label class="product-form__font-style font-family-normal font-color-selected-accent font-color-hover-accent" for="engraving-font-0">Abc</label>
+                                {% if product.metafields.engraving-font.size > 0 %}
+                                    {% for font in product.metafields.engraving-font %}
+                                        {% assign font_id = font | first %}
+                                        {% assign font_value = font | last %}
+                                        {%- assign font_name = font_value | split: "Name:" | last | split: "Class:" | first | remove: " " -%}
+                                        {%- assign font_class = font_value | split: "Class:" | last | remove: " " -%}
+                                        <input class="product-form__radio" type="radio" name="font-style" id="engraving-{{ font_id }}" data-font-family="{{ font_name }}">
+                                        <label class="product-form__font-style font-family-{{ font_class }} font-color-selected-accent font-color-hover-accent" for="engraving-{{ font_id }}">Abc</label>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="engrave-submit-buttons">
+                    <button id="confirm-engraving" class="btn btn-confirm" type="button">
+                        Add Engravings
+                        <span class="is-markup" data-money="399" style="display: none;">$3.99</span>
+                    </button>
+                    <button id="no-engraving" class="btn btn-no-engraving" type="button">Without Engraving</button>
+                </div>
+                <div class="product-reminder">
+                    <p>Please Note: No colors or emoji can be used, e.g. a red heart icon will show a heart in color black.</p>
+                </div>
+                <div id="loader-engrave-container" class="loading-screen">
+                    {{ 'spinner.gif' | asset_url | img_tag: 'Loading' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

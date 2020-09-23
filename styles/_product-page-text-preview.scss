@@ -1,0 +1,90 @@
+ .product-form {
+
+     &__container {
+
+        &--label {
+            padding-top: 20px;
+            padding-left:10px
+        }
+
+        &--text {
+            line-height: 1;
+            padding: 10px 10px 0 20px;
+            min-height: 60px;
+            // text-transform: capitalize;
+        }
+     }
+
+     &__container--input {
+        position: relative;
+
+        &-label {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            background-color: #fff;
+        }
+     }
+
+     &__container--grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+         grid-gap: 15px;
+     }
+
+     &__font-style {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: center;
+        transition: all .2s ease;
+     }
+
+     &__radio {
+        display: none;
+     }
+ }
+
+//  Dynamic Selected Color
+.product-form__radio:checked + .font-color-selected {
+
+    &-gold {
+        color: $font-color-gold;
+        border-color: $font-color-gold;
+    }
+    &-rose-gold {
+        color: $font-color-rose-gold;
+        border-color: $font-color-rose-gold;
+    }
+    &-silver {
+        color: $font-color-silver;
+        border-color: $font-color-silver;
+    }
+    &-accent {
+        color: $btn-secondary-accent;
+        border-color: $btn-secondary-accent;
+    }
+}
+
+// Dynamic Hover
+.font-color-hover  {
+    &-gold:hover {
+        border-color: $font-color-gold;
+    }
+    &-rose-gold:hover {
+        border-color: $font-color-rose-gold;
+    }
+    &-silver:hover { 
+        border-color: $font-color-silver;
+    }
+    &-accent:hover {
+        border-color: $btn-secondary-accent;
+    }
+}
+
+ .custom-form {
+     &__controls-group {
+         display: block;
+     }
+ }

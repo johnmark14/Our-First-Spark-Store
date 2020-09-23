@@ -1,0 +1,54 @@
+{% assign product_limit = 4 %}
+{% assign score = 2 %}
+{% assign image_size = 'compact' %}
+{% assign all_collection = 'related' %}
+{% assign heading = 'You may also like' %}
+
+{% for c in product.collections %}
+  {% if c.handle == all_collection %}
+    {% assign collection = c %}
+  {% endif %}
+{% endfor %}
+<div class="similar-products--modal">
+    <div class="similar-products--modal__container">
+        <!-- <div class="similar-products--modal__close" id="close-modal">
+            <span>&times;</span>
+        </div> -->
+        <span id="close-modal" class="modal-container__modal-close" id="close-modal"><i class="fa fa-times"></i></span>
+        <h2>Similar Products</h2> 
+        <div class="similar-products--modal-content s-p-all">
+            <ul class="similar-products__card display-grid grid-gap-s">
+                {% if collection and collection.products_count > 1 %}
+                    {% assign i = 0 %}
+                    {% assign current_product = product %}
+                    {% assign current_product_tags = current_product.tags | join: ' ' %}
+                    {% for product in collection.products %}
+
+                        {% assign s = 0 %}
+                        {% for tag in product.tags %}
+                            {% if current_product_tags contains tag %}
+                                {% assign s = s | plus: 1 %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if s > score and current_product.handle != product.handle %}
+                            {% assign i = i | plus: 1 %}
+
+                            <li class="similar-products__card--item">
+                                <a href="{{ product.url | within: collection }}">
+                                    <div class="similar-products__card--item-img">
+                                        {{product.featured_image | product_img_url: '200x200' | img_tag}}
+                                    </div>
+                                    <div class="similar-products__card--item-details">
+                                        <span class="product-price">{{ product.price | money }}</span>
+                                        <h6 class="product-title">{{ product.title }}</h6>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

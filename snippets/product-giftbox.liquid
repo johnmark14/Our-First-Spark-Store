@@ -1,0 +1,17 @@
+{%- liquid 
+    
+    for variant in all_products['gift-box'].variants
+        assign var_id = variant.id
+    endfor
+-%}
+<div class="giftbox">
+    <div class="giftbox__checkbox chk-margin-right"> 
+        <input type="checkbox" name="properties[_Gift Box]" id="chk-giftbox" value="x1" data-prod-id="{{var_id}}">
+    </div>
+    <div class="giftbox__gift-img">
+        <a href="{{all_products['gift-box'].url | within: collection}}" class="giftbox__gift-img--link">
+            <img class="lazyloaded" alt="Gift Box" src="{{all_products['gift-box'].featured_image.src | img_url: 'medium'}}">
+        </a>
+        <label for="chk-giftbox"><h6 class="other-label">{{all_products['gift-box'].title}} + <span>{{all_products['gift-box'].price | money}}</span></h6></label>
+    </div>
+</div>
