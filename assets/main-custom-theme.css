@@ -1874,6 +1874,38 @@
           user-select: none;
 }
 
+/* ===============================================
+// Reveal module
+// =============================================== */
+.reveal .hidden {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.card-hover:hover .product-card__image-with-placeholder-wrapper div div .reveal img {
+  opacity: 1;
+}
+
+.reveal {
+  position: relative;
+}
+
+.reveal .hidden {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card-hover:hover .product-card__image-with-placeholder-wrapper div div .reveal .hidden {
+  z-index: 1;
+  opacity: 2;
+}
+
 .cart__image-wrapper {
   cursor: pointer;
 }
@@ -1893,7 +1925,7 @@
 
 #pagination a {
   margin: 0 4px;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   background-color: #e6e6e6;
   -webkit-transition: all .3s ease-in;
@@ -1905,8 +1937,9 @@
 }
 
 #pagination a.current {
-  background-color: #eeeeee;
+  background-color: #000;
   border: 1px solid #d6d6d6;
+  color: white;
 }
 
 .s-m-top {
