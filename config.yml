@@ -1,6 +1,0 @@
-development:
-  password: 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
-  theme_id: "106961502370"
-  store: our-first-spark.myshopify.com
-
-  ignore_files: styles/*.scss
